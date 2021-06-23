@@ -20,5 +20,20 @@ namespace CodeTheWay.Web.Ui.Controllers
         {
             return View(await BarrelService.GetBarrels());
         }
+
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var barrel = await BarrelService.GetBarrel(id);
+            BarrelRegistrationViewModel test = new BarrelRegistrationViewModel()
+            {
+                Id = barrel.Id,
+                Radius = barrel.Radius,
+                Height = barrel.Height,
+                Content = barrel.Content,
+                CurrentLocation = barrel.CurrentLocation
+
+            };
+            return View(test);
+        }
     }
 }
