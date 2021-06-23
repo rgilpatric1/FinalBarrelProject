@@ -10,6 +10,10 @@ namespace CodeTheWay.Web.Ui.Repositories
     public class BarrelRepository : IBarrelRepository
     {
         private AppDbContext AppDbContext;
+        public BarrelRepository(AppDbContext dbContext)
+        {
+            this.AppDbContext = dbContext;
+        }
         public async Task<List<Barrel>> GetBarrels()
         {
             return await AppDbContext.Barrel.ToListAsync();

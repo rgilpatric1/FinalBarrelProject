@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeTheWay.Web.Ui.Repositories
 {
-    interface IBarrelRepository
+    public interface IBarrelRepository
     {
         public Task<List<Barrel>> GetBarrels();
         public Task<Barrel> GetBarrel(Guid id);
