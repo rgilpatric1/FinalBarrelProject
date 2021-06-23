@@ -1,10 +1,10 @@
-﻿@model List<CodeTheWay.Web.Ui.Models.ViewModels.BarrelRegistrationViewModel>
+﻿@model List<CodeTheWay.Web.Ui.Models.Barrel>
 @*
     ViewData["Title"] = "Index";
 *@
 <div class="container-fluid">
     <h1 class="tableLinks">Index</h1>
-    <table class="table">
+    <table class="table sortable">
         <thead>
             <tr>
                 <th scope="col">Radius</th>
@@ -50,6 +50,6 @@
     </table>
 
     <div>
-        <a asp-action="Create" class="tableLinks">Create a new barrel.</a>
+        <a asp-action="Create" class="tableLinks"><b>Create a new barrel.</b></a>
     </div>
 </div>
