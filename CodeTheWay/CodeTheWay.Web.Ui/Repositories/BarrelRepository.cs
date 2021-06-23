@@ -23,5 +23,13 @@ namespace CodeTheWay.Web.Ui.Repositories
         {
             return await AppDbContext.Barrel.FirstOrDefaultAsync(i => i.Id == id);
         }
+
+        public async Task<Barrel> Create(Barrel barrel)
+        {
+            var result = await this.AppDbContext.AddAsync(barrel);
+            await this.AppDbContext.SaveChangesAsync();
+
+            return result.Entity;
+        }
     }
 }
