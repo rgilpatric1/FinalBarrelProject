@@ -23,5 +23,12 @@ namespace CodeTheWay.Web.Ui.Repositories
         {
             return await AppDbContext.Barrel.FirstOrDefaultAsync(i => i.Id == id);
         }
+
+        public async Task<Barrel> Delete(Barrel model)
+        {
+            AppDbContext.Barrel.Remove(model);
+            await AppDbContext.SaveChangesAsync();
+            return model;
+        }
     }
 }
