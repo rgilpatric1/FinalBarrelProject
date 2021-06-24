@@ -61,7 +61,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-color: lightgray;
+  background-color: #e4e6eb;
 }
 .footer {
   position: absolute;
@@ -86,4 +86,12 @@ body {
     padding: 1%;
     transform: translate(35%);
     color: black;
+}
+
+table, th, td, thead {
+    border-bottom: 1px solid black;
+}
+
+thead {
+    border-bottom: 3px solid black;
 }
