@@ -31,6 +31,12 @@ namespace CodeTheWay.Web.Ui.Repositories
 
             return result.Entity;
         }
+        public async Task<Barrel> Update(Barrel model)
+        {
+            var result = AppDbContext.Barrel.Update(model);
+            await AppDbContext.SaveChangesAsync();
+            return result.Entity;
+        }
 
         public async Task<Barrel> Delete(Barrel model)
         {
