@@ -13,27 +13,27 @@
     <table class="table sortable" id="myTable">
         <thead>
             <tr>
-                <th scope="col">Radius</th>
-                <th scope="col">Height</th>
-                <th scope="col">Content</th>
-                <th scope="col">Current Location</th>
-                <th scope="col">Commands</th>
+                <th scope="col" id="fontColor">Radius</th>
+                <th scope="col" id="fontColor">Height</th>
+                <th scope="col" id="fontColor">Content</th>
+                <th scope="col" id="fontColor">Current Location</th>
+                <th scope="col" id="fontColor">Commands</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td id="fontColor">
                         @Html.DisplayFor(modelItem => item.Radius)
                     </td>
-                    <td>
+                    <td id="fontColor">
                         @Html.DisplayFor(modelItem => item.Height)
                     </td>
-                    <td>
+                    <td id="fontColor">
                         @Html.DisplayFor(modelItem => item.Content)
                     </td>
-                    <td>
+                    <td id="fontColor">
                         @Html.DisplayFor(modelItem => item.CurrentLocation)
                     </td>
                     <td>
@@ -41,7 +41,6 @@
                             <div>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.Id })
                             </div>
-
                             <div>
                                 @Html.ActionLink("Details", "Details", new { id = item.Id })
                             </div>
