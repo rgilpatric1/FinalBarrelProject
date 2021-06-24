@@ -6,8 +6,12 @@
 <script src="~/js/site.js"></script>
 
 <div class="container-fluid">
-    <h1 class="tableLinks">Index</h1>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for items.." title="Type in an item">
+    <div class="row">
+        <div class="col-sm-6"><h1 class="tableLinks">Index</h1></div>
+        <div class="col-sm-5">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for items.." title="Type in an item" class="tableInput" align="right">
+        </div>
+    </div>
     <table class="table sortable" id="myTable">
         <thead>
             <tr>
