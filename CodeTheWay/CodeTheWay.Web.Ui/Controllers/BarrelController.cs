@@ -1,5 +1,6 @@
 ﻿using CodeTheWay.Web.Ui.Models;
-using CodeTheWay.Web.Ui.Services;
+using CodeTheWay.Web.Ui.Services; //CHECK
+using CodeTheWay.Web.Ui.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -60,6 +61,13 @@ namespace CodeTheWay.Web.Ui.Controllers
 
             };
             return View(test);
+        }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var barrel = await BarrelService.GetBarrel(id);
+            await BarrelService.Delete(barrel);
+            return RedirectToAction("Index");
         }
     }
 }

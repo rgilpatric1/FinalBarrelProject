@@ -28,5 +28,9 @@ namespace CodeTheWay.Web.Ui.Services
         {
             return await this.BarrelRepository.Create(barrel);
         }
+        public async Task<Barrel> Delete(Barrel barrel)
+        {
+            return await BarrelRepository.Delete(barrel);
+        }
     }
 }
