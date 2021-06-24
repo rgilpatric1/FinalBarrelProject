@@ -9,7 +9,7 @@ namespace CodeTheWay.Web.Ui.Services
 {
     public class BarrelService : IBarrelService
     {
-        IBarrelRepository BarrelRepository;
+       public IBarrelRepository BarrelRepository;
         public BarrelService(AppDbContext dbContext)
         {
             this.BarrelRepository = new BarrelRepository(dbContext);
@@ -22,6 +22,15 @@ namespace CodeTheWay.Web.Ui.Services
         public async Task<Barrel> GetBarrel(Guid id)
         {
             return await this.BarrelRepository.GetBarrel(id);
+        }
+
+        public async Task<Barrel> Create(Barrel barrel)
+        {
+            return await this.BarrelRepository.Create(barrel);
+        }
+        public async Task<Barrel> Update(Barrel barrel)
+        {
+            return await this.BarrelRepository.Update(barrel);
         }
     }
 }
