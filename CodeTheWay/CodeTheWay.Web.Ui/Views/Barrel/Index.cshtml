@@ -3,6 +3,8 @@
     ViewData["Title"] = "Index";
 *@
 <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<script src="~/js/site.js"></script>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6"><h1 class="tableLinks">Index</h1></div>
@@ -22,7 +24,9 @@
         </thead>
         <tbody>
             @foreach (var item in Model)
+
             {
+
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Radius)
@@ -46,11 +50,13 @@
                                 @Html.ActionLink("Details", "Details", new { id = item.Id })
                             </div>
                             <div>
-                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                             @*   <a href="/Barrel/Delete" class="delete" data-confirm="Are you sure to delete this item?">Delete</a> *@
+                             @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { onclick = "return confirm('Are you sure you wish to delete this Barrel?');" })
                             </div>
                         </div>
                     </td>
                 </tr>
+              
             }
         </tbody>
     </table>
