@@ -12,6 +12,8 @@ namespace CodeTheWay.Web.Ui.Repositories
         public Task<Barrel> GetBarrel(Guid id);
         public Task<Barrel> Create(Barrel barrel);
 
+        public Task<Barrel> Delete(Barrel model);
+
         public Task<Barrel> Update(Barrel barrel);
     }
 }

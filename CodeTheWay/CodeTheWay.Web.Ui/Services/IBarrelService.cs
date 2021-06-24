@@ -13,5 +13,6 @@ namespace CodeTheWay.Web.Ui.Services
         public Task<Barrel> GetBarrel(Guid id);
 
         public Task<Barrel> Update(Barrel barrel);
+        public Task<Barrel> Delete(Barrel barrel);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CodeTheWay.Web.Ui.Models;
-using CodeTheWay.Web.Ui.Services;
+using CodeTheWay.Web.Ui.Services; //CHECK
+using CodeTheWay.Web.Ui.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using CodeTheWay.Web.Ui.Repositories;
 using System;
@@ -83,6 +84,28 @@ namespace CodeTheWay.Web.Ui.Controllers
 
             }
             return View(model);
+        }
+
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var barrel = await BarrelService.GetBarrel(id);
+            BarrelRegistrationViewModel test = new BarrelRegistrationViewModel()
+            {
+                Id = barrel.Id,
+                Radius = barrel.Radius,
+                Height = barrel.Height,
+                Content = barrel.Content,
+                CurrentLocation = barrel.CurrentLocation
+
+            };
+            return View(test);
+        }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var barrel = await BarrelService.GetBarrel(id);
+            await BarrelService.Delete(barrel);
+            return RedirectToAction("Index");
         }
     }
 }
