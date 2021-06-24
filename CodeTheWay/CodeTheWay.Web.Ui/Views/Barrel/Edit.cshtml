@@ -8,10 +8,7 @@
     <h1>Edit</h1>
     <form asp-action="UpDate">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div id="hidden" class="form-group" display="none">
-            <label asp-for="Id" class="control-label"></label>
-            <input asp-for="Id" class="form-control" value=@Model.Id />
-        </div>
+        
         <div class="form-group">
             <label asp-for="Radius" class="control-label"></label>
             <input asp-for="Radius" class="form-control" value=@Model.Radius />
