@@ -72,3 +72,9 @@ body {
 #hidden {
     visibility: hidden;
 }
+
+.tableInput {
+    float: right;
+    padding: 1%;
+    transform: translate(35%);
+}
